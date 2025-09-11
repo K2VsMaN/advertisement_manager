@@ -36,9 +36,9 @@ def add_edit_page():
     show_footer()
 
 @ui.page("/view_event")
-def add_view_page():
+def add_view_page(id=""):
     show_header()
-    show_view_event_page()
+    show_view_event_page(id)
     show_view_event_page_2()
     show_footer()
     
