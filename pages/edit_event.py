@@ -1,4 +1,63 @@
 from nicegui import ui
+from datetime import datetime
+
 
 def show_edit_event():
-    ui.label("This is the edit_event page")
+    with ui.card().classes('w-full max-w-lg mx-auto my-10 bg-white shadow-xl rounded-2xl p-6'):
+        ui.label('✏️ Edit Event').classes('text-3xl font-bold text-gray-800 text-center mb-6')
+
+        # Event Title
+        ui.label('Event Title').classes('text-lg font-semibold text-gray-700 mt-4')
+        event_title = ui.input(value=['title'], placeholder='e.g. Startup Launch Party').props('outlined rounded-md dense').classes('w-full transition-all duration-300 hover:shadow-md')
+
+        # Event Description
+        ui.label('Event Description').classes('text-lg font-semibold text-gray-700 mt-4')
+        event_description = ui.textarea(value=['description'], placeholder='Write a brief overview of your event...').props('outlined rounded-md autogrow').classes('w-full transition-all duration-300 hover:shadow-md')
+
+        # Event Date
+        ui.label('Event Date').classes('text-lg font-semibold text-gray-700 mt-4')
+        event_date = ui.input(value=['date'], placeholder='Select a date').props('type=date outlined rounded-md dense').classes('w-full transition-all duration-300 hover:shadow-md')
+
+        # Start and End Times on the same row
+        with ui.row().classes('w-full gap-4 mt-4'):
+            # Start Time
+            with ui.column().classes('flex-1'):
+                ui.label('Start Time').classes('text-lg font-semibold text-gray-700')
+                start_time = ui.input(value=['start_time'], placeholder='Select start time').props('type=time outlined rounded-md dense').classes('w-full')
+
+            # End Time
+            with ui.column().classes('flex-1'):
+                ui.label('End Time').classes('text-lg font-semibold text-gray-700')
+                end_time = ui.input(value=['end_time'], placeholder='Select end time').props('type=time outlined rounded-md dense').classes('w-full')
+
+        # --- Category and Price on the same row ---
+        with ui.row().classes('w-full gap-4 mt-4'):
+            # Category
+            with ui.column().classes('flex-1'):
+                ui.label('Category').classes('text-lg font-semibold text-gray-700')
+                category = ui.input('', placeholder='e.g. Technology').props('outlined rounded-md dense').classes('w-full')
+
+            # Price
+            with ui.column().classes('flex-1'):
+                ui.label('Price').classes('text-lg font-semibold text-gray-700')
+                price = ui.input(placeholder='e.g. 50').props('type=number outlined rounded-md dense').classes('w-full')    
+
+        # Image Upload Section (you might want to display the current image and allow a new one to be uploaded)
+        ui.label('Event Flyer').classes('text-lg font-semibold text-gray-700 mt-4')
+        # This upload component can be used to replace the existing image
+        ui.upload(on_upload=lambda e: ui.notify(f'New image "{e.name}" uploaded')).props('flat bordered').classes('w-full').style('border: 2px dashed #ccc; padding: 20px;')
+
+        with ui.row().classes('w-full justify-center mt-8 gap-4'):
+            # The "Create" button is changed to "Save Changes"
+            ui.button('Save Changes', color='primary').classes('text-lg font-semibold py-3 px-8 rounded-md shadow-lg transition-transform transform hover:scale-105 hover:shadow-2xl')
+            
+            # Add a secondary button for "Cancel" or "Delete"
+            ui.button('Cancel', color='secondary').classes('text-lg font-semibold py-3 px-8 rounded-md').props('flat')
+
+ui.add_head_html('''
+    <style>
+        body {
+            background-color: #f0f2f5;
+        }
+    </style>
+''')
