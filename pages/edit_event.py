@@ -2,7 +2,8 @@ from nicegui import ui
 from datetime import datetime
 
 
-def show_edit_event():
+def show_edit_event_page():
+    ui.query(".nicegui-content").classes("m-0 p-0")
     with ui.card().classes('w-full max-w-lg mx-auto my-10 bg-white shadow-xl rounded-2xl p-6'):
         ui.label('✏️ Edit Event').classes('text-3xl font-bold text-gray-800 text-center mb-6')
 
