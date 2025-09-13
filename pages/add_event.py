@@ -3,12 +3,12 @@ from datetime import datetime
 import requests
 from utils.api import base_url
 
-def create_event(data):
-    response = requests.post(f"{base_url}/adverts", data)
+def create_event(data,files):
+    response = requests.post(f"{base_url}/adverts", data=data, files=files)
     print(response.json())
 
 def show_add_event_page():
-    flyer_file_name = None
+    # flyer_file_name = None
     flyer_content = None
 
     def handle_flyer_upload(e: events.UploadEventArguments):
@@ -67,9 +67,11 @@ def show_add_event_page():
                 "price": price.value,
                 "advert_date": event_date.value,
                 "start_time": start_time.value,
-                "end_time": end_time.value,
-                "flyer": flyer_content
+                "end_time": end_time.value},
+                files={"flyer": flyer_content
             })).classes('text-lg font-semibold py-3 px-8 rounded-md shadow-lg transition-transform transform hover:scale-105 hover:shadow-2xl')
+            # .on('click', partial(ui.navigate.to, f'/adverts'))
+            
 
 ui.add_head_html('''
     <style>

@@ -1,8 +1,25 @@
-from nicegui import ui
+from nicegui import ui, events
 from datetime import datetime
+import requests
+from utils.api import base_url
+
+
+
 
 
 def show_edit_event_page():
+    # flyer_content = None
+
+    # def edit_event(data, files):
+    #     response = requests.put(f"{base_url}/adverts/{id}", data=data, files=files)
+    #     if response.status_code == 200:
+    #         ui.navigate.to("/")
+    #     print(response.json())
+
+    # def handle_flyer_upload(e:events.UploadEventArguments):
+    #     nonlocal flyer_content
+    #     flyer_content = e.content.read()
+
     ui.query(".nicegui-content").classes("m-0 p-0")
     with ui.card().classes('w-full max-w-lg mx-auto my-10 bg-white shadow-xl rounded-2xl p-6'):
         ui.label('✏️ Edit Event').classes('text-3xl font-bold text-gray-800 text-center mb-6')
@@ -50,7 +67,18 @@ def show_edit_event_page():
 
         with ui.row().classes('w-full justify-center mt-8 gap-4'):
             # The "Create" button is changed to "Save Changes"
-            ui.button('Save Changes', color='primary').classes('text-lg font-semibold py-3 px-8 rounded-md shadow-lg transition-transform transform hover:scale-105 hover:shadow-2xl')
+            ui.button('Save Changes', color='primary'
+            #           , on_click=lambda:edit_event({
+            #     "title": event_title.value,
+            #     "description": event_description.value,
+            #     "category": category.value,
+            #     "price": price.value,
+            #     "advert_date": event_date.value,
+            #     "start_time": start_time.value,
+            #     "end_time": end_time.value},
+            #     files={"flyer": flyer_content
+            # })
+            ).classes('text-lg font-semibold py-3 px-8 rounded-md shadow-lg transition-transform transform hover:scale-105 hover:shadow-2xl')
             
             # Add a secondary button for "Cancel" or "Delete"
             ui.button('Cancel', color='secondary').classes('text-lg font-semibold py-3 px-8 rounded-md').props('flat')

@@ -16,9 +16,9 @@ def show_footer():
 
             with ui.row().classes('gap-6'):
                 ui.link('Home', '/').classes(link_base)
-                ui.link('Add Event', '/add_event').classes(link_base)
-                ui.link('Edit Event', '/edit_event').classes(link_base)
-                ui.link('View Event', '/view_event').classes(link_base)
+                # ui.link('Add Event', '/add_event').classes(link_base)
+                # ui.link('Edit Event', '/edit_event').classes(link_base)
+                # ui.link('View Event', '/view_event').classes(link_base)
 
             with ui.row().classes('gap-4'):
                 ui.icon('public').classes('text-white cursor-pointer hover:text-blue-400')

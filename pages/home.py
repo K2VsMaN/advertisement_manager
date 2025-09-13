@@ -17,10 +17,11 @@ def show_home_page():
             ui.html("Africa's most trusted online advert partner since 2025. Discover and book events with ease, while<br>while empowering creators to sell and manage with ease.") \
               .classes("text-white text-xl text-left leading-tight mt-2")
 
-            ui.button("CREATE EVENT") \
+            ui.button("CREATE EVENT", on_click=lambda: ui.navigate.to("/add_event")) \
               .classes("uppercase rounded-full px-5 py-3 font-bold tracking-widest leading-tight mt-6") \
               .style("letter-spacing: 0.15em;") \
               .props("color=orange text-color=white push ripple")
+              
 
             # Grey lines between columns
             with ui.row().classes("w-full text-white pt-10 flex-nowrap divide-x divide-gray-500/40"):

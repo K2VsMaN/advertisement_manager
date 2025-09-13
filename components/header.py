@@ -31,9 +31,9 @@ def show_header():
                 )
                 with ui.row().classes('items-center gap-2'):
                     ui.link('Home', '/').classes(base)
-                    ui.link('Add Event', '/add_event').classes(base)
-                    ui.link('Edit Event', '/edit_event').classes(base)
-                    ui.link('View Event', '/view_event').classes(base)
+                    # ui.link('Add Event', '/add_event').classes(base)
+                    # ui.link('Edit Event', '/edit_event').classes(base)
+                    # ui.link('View Event', '/view_event').classes(base)
 
 # show_header()
 # ui.run()
