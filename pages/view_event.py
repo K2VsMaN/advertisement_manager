@@ -82,4 +82,3 @@ def show_view_event_page(id):
 
                     delete_btn.on('click', lambda e, d=del_dlg: d.open())
 
-ui.run()
