@@ -47,4 +47,4 @@ def show_header():
                         .style("background:#f64209; color:white; letter-spacing: 0.15em; align-items:center; height:38px;") \
                         .props("flat dense no-caps push ripple")
 
-                    ui.link('Sign In', '/signin').classes('nav-link text-white/90')
+                    ui.link('Sign In', '/vendor/signin').classes('nav-link text-white/90')

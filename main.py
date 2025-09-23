@@ -11,6 +11,8 @@ from pages.vendor.dashboard import *
 from pages.vendor.add_event import *
 from pages.vendor.edit_event import *
 from pages.vendor.events import *
+from pages.vendor.signup import *
+from pages.vendor.signin import *
 
 # Expose the assets folder to the nicegui server
 app.add_static_files("/assets", "assets")
