@@ -18,13 +18,13 @@ def show_home_page_3():
                 with ui.row().classes('gap-6 mt-2 justify-center'):
                     # App Store
                     with ui.row().classes('bg-white rounded-full px-6 py-3 items-center gap-2 min-w-[140px] max-w-[200px]'):
-                        # ui.icon('apple').classes('text-black text-2xl')
+                        ui.icon('apple').classes('text-black text-2xl')
                         with ui.column().classes('items-start'):
                             ui.label('Download on the').classes('text-xs text-black')
                             ui.label('App Store').classes('text-base font-bold text-black')
                     # Google Play
                     with ui.row().classes('bg-white rounded-full px-6 py-3 items-center gap-2 min-w-[140px] max-w-[200px]'):
-                        # ui.icon('android').classes('text-black text-2xl')
+                        ui.icon('android').classes('text-black text-2xl')
                         with ui.column().classes('items-start'):
                             ui.label('GET IT ON').classes('text-xs text-black')
                             ui.label('Google Play').classes('text-base font-bold text-black')
