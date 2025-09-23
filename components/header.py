@@ -42,7 +42,7 @@ def show_header():
                 with ui.row().classes('items-center gap-6'):
 
                     # CREATE EVENT button correctly aligned
-                    ui.button("CREATE EVENT", on_click=lambda: ui.navigate.to("/add_event")) \
+                    ui.button("CREATE EVENT", on_click=lambda: ui.navigate.to("/vendor/add_event")) \
                         .classes("create-btn uppercase rounded-xl px-3 py-3 font-bold tracking-widest leading-tight") \
                         .style("background:#f64209; color:white; letter-spacing: 0.15em; align-items:center; height:38px;") \
                         .props("flat dense no-caps push ripple")

@@ -55,7 +55,7 @@ def show_view_event_page(id):
                             .classes('rounded-full px-6 py-3 font-bold') \
                             .props('color=orange text-color=white push ripple')
 
-                        edit_btn = ui.button('Edit',on_click=lambda: ui.navigate.to("/edit_event")) \
+                        edit_btn = ui.button('Edit',on_click=lambda: ui.navigate.to("/vendor/edit_event")) \
                             .classes('rounded-full px-5 py-3 font-semibold') \
                             .props('color=grey-7 text-color=white push')
 
