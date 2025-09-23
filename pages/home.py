@@ -50,4 +50,3 @@ def show_home_page():
                             
 
 
-ui.run()

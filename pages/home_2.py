@@ -127,54 +127,7 @@ def view_page(event_id: str):
                         delete_btn = ui.button('Delete').classes('rounded-full px-5 py-3 font-semibold') \
                             .props('color=red text-color=white push')
 
-                    # ---- Edit dialog ----
-                    # with ui.dialog() as edit_dlg, ui.card().classes('min-w-[340px] max-w-[90vw]'):
-                    #     ui.label('Edit event').classes('text-lg font-bold mb-2')
-
-                    #     title_in = ui.input('Title', value=ev['title']).classes('w-full')
-                    #     date_in = ui.input('Date & time', value=ev['date']).classes('w-full')
-                    #     location_in = ui.input('Location', value=ev['location']).classes('w-full')
-                    #     price_sel = ui.select(['Free', 'Paid', 'RSVP'], value=ev['price'], label='Price').classes('w-full')
-                    #     tag_sel = ui.select(['', 'Sponsored', 'Almost full', 'Going fast'],
-                    #                         value=ev.get('tag') or '', label='Tag (optional)') \
-                    #              .props('clearable use-input').classes('w-full')
-                    #     image_in = ui.input('Image URL', value=ev['image']).classes('w-full')
-
-                    #     with ui.row().classes('justify-end gap-2 mt-4'):
-                    #         ui.button('Cancel', on_click=edit_dlg.close).props('flat')
-
-                    #         def save_changes():
-                    #             # Update data
-                    #             ev['title'] = title_in.value
-                    #             ev['date'] = date_in.value
-                    #             ev['location'] = location_in.value
-                    #             ev['price'] = price_sel.value
-                    #             ev['tag'] = tag_sel.value if tag_sel.value else None
-                    #             ev['image'] = image_in.value
-
-                    #             # Update UI immediately
-                    #             title_lbl.set_text(ev['title'])
-                    #             date_lbl.set_text(ev['date'])
-                    #             location_lbl.set_text(ev['location'])
-                    #             price_lbl.set_text(ev['price'])
-                    #             img_el.set_source(ev['image'])
-
-                    #             if ev.get('tag'):
-                    #                 tag_lbl.set_text(ev['tag'])
-                    #                 tag_lbl.visible = True
-                    #                 tag_lbl.update()
-                    #             else:
-                    #                 tag_lbl.visible = False
-                    #                 tag_lbl.update()
-
-                    #             ui.notify('Event updated', type='positive')
-
-                    #         ui.button('Save', on_click=lambda e: (save_changes(), edit_dlg.close())) \
-                    #             .props('color=orange text-color=white push ripple')
-
-                    # edit_btn.on('click', lambda e, d=edit_dlg: d.open())
-
-                    # ---- Delete confirm dialog ----
+                    
                     with ui.dialog() as del_dlg, ui.card().classes('min-w-[320px] max-w-[90vw]'):
                         ui.label('Delete this event?').classes('text-lg font-bold')
                         ui.label(f'"{ev["title"]}" will be removed. This action cannot be undone.') \
@@ -195,4 +148,3 @@ def view_page(event_id: str):
                     delete_btn.on('click', lambda e, d=del_dlg: d.open())
 
 
-ui.run()

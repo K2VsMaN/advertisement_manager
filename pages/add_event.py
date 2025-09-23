@@ -1,5 +1,4 @@
 from nicegui import ui, events
-from datetime import datetime
 import requests
 from utils.api import base_url
 
@@ -8,7 +7,6 @@ def create_event(data,files):
     print(response.json())
 
 def show_add_event_page():
-    # flyer_file_name = None
     flyer_content = None
 
     def handle_flyer_upload(e: events.UploadEventArguments):
