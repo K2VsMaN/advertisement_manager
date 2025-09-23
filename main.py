@@ -7,6 +7,7 @@ from pages.edit_event import show_edit_event_page
 from pages.view_event import show_view_event_page
 from pages.view_event_2 import show_view_event_page_2
 from pages.home_2 import show_home_page_2
+from pages.home_3 import show_home_page_3
 from components.footer import show_footer
 
 # Expose the assets folder to the nicegui server
@@ -20,6 +21,7 @@ ui.add_head_html('<link rel="stylesheet" href="/assets/reset.css"/>')
 def home_page():
     show_header()
     show_home_page()
+    show_home_page_3()
     show_home_page_2()
     show_footer()
     

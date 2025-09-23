@@ -27,9 +27,9 @@ def show_home_page():
                     .classes("text-white text-xl text-left leading-tight mt-2")
 
                   ui.button("CREATE EVENT", on_click=lambda: ui.navigate.to("/add_event")) \
-                    .classes("uppercase rounded-full px-5 py-3 font-bold tracking-widest leading-tight mt-6") \
-                    .style("letter-spacing: 0.15em;") \
-                    .props("color=orange text-color=white push ripple")
+    .classes("uppercase rounded-full px-5 py-3 text-white font-bold tracking-widest leading-tight mt-6") \
+    .style("background:#f64209; color:white; letter-spacing:0.15em;") \
+    .props("flat dense no-caps push ripple")
                   
 
                   # Grey lines between columns

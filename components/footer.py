@@ -1,6 +1,7 @@
 from nicegui import ui
 
 def show_footer():
+    ui.add_head_html('<script src="https://kit.fontawesome.com/a4861baa7d.js" crossorigin="anonymous"></script>')
     link_base = 'text-white text-sm font-semibold hover:text-blue-400 transition-colors duration-300 no-underline'
 
     # Overlay footer (controlled with z-index via classes 'front' and 'behind')
@@ -24,6 +25,8 @@ def show_footer():
                 ui.icon('public').classes('text-white cursor-pointer hover:text-blue-400')
                 ui.icon('share').classes('text-white cursor-pointer hover:text-blue-400')
                 ui.icon('mail').classes('text-white cursor-pointer hover:text-blue-400')
+                ui.html('<i class="fa-brands fa-facebook"></i>')
+                
 
 # Make content stack above footer and add bottom padding for when footer is in front
 ui.query('body').classes('min-h-screen flex flex-col')

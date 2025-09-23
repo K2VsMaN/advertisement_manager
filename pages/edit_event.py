@@ -1,10 +1,6 @@
 from nicegui import ui, events
 from datetime import datetime
-import requests
 from utils.api import base_url
-
-
-
 
 
 def show_edit_event_page():
