@@ -5,10 +5,10 @@ def show_sidebar():
     Creates a static sidebar for the vendor dashboard using a ui.column.
     """
     ui.query(".nicegui-content").classes("m-0 p-0 gap-0")
-    with ui.column().classes('bg-gray-100 p-4 w-[250px] shadow-lg h-full justify-between items-center'):
+    with ui.column().classes('bg-gray-100 p-4 w-[20%] shadow-lg h-full justify-between items-center fixed'):
         # Top section with branding and vendor info
         with ui.column().classes('w-full items-center mb-6'):
-            ui.link("Stellar", "/vendor/dashboard").classes('text-4xl font-extrabold text-orange-900 no-underline').style('font-family: "Gwendolyn", cursive; font-weight: 700;')
+            ui.link("Stellar", "/vendor/dashboard").classes('text-4xl font-extrabold text-orange-900 no-underline')
             ui.label("Vendor Dashboard").classes('text-lg font-bold text-gray-800')
         
         ui.separator().classes('w-full bg-orange-800 h-0.5 mb-6')
