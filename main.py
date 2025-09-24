@@ -13,6 +13,7 @@ from pages.vendor.edit_event import *
 from pages.vendor.events import *
 from pages.vendor.signup import *
 from pages.vendor.signin import *
+from pages.user_signup import *
 
 # Expose the assets folder to the nicegui server
 app.add_static_files("/assets", "assets")
