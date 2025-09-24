@@ -1,8 +1,8 @@
 from nicegui import ui
 
 
-@ui.page("/vendor/signup")
-def show_signup():
+@ui.page("/signup")
+def show_user_signup():
     ui.add_head_html('<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Caveat:wght@400..700&family=Gwendolyn:wght@400;700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lavishly+Yours&family=Stoke:wght@300;400&display=swap" rel="stylesheet">')
 
     ui.query(".nicegui-content").classes('m-0 p-0 gap-0')
@@ -14,10 +14,10 @@ def show_signup():
             with ui.row().classes("gap-0 mb-2"):
                 ui.button(text="Vendor", on_click=lambda: ui.navigate.to('/vendor/signup'), icon="interpreter_mode").props(
                     "flat dense no-caps"
-                ).classes('bg-orange text-white px-8 py-2')
-                ui.button(text="User", on_click=lambda: ui.navigate.to('/signup'), icon="business_center").props(
+                ).classes('bg-white text-orange-600 px-8 py-2')
+                ui.button(text="User", on_click=lambda: ui.navigate.to("/signup"), icon="business_center").props(
                     "flat dense no-caps"
-                ).classes('bg-white text-orange-600 px-2 py-2')
+                ).classes('bg-orange text-white px-2 py-2')
             ui.input(placeholder="Email").props('type=email borderless').classes('w-[80%] bg-white px-4')
             ui.input(placeholder="Password", password=True, password_toggle_button=True).props('type=password borderless').classes('w-[80%] bg-white px-4')
             ui.input(placeholder="Confirm Password", password=True, password_toggle_button=True).props('type=password borderless').classes('w-[80%] bg-white px-4')

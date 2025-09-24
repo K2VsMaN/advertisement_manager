@@ -8,7 +8,7 @@ def show_signin_page():
     ui.query('.nicegui-row').classes('flex-nowrap')
     with ui.element("main").classes('w-full h-screen flex flex-col justify-center items-center p-4'):
         with ui.card().classes('w-[40%] bg-gray-100 justify-center items-center shadow-lg'):
-            ui.label("Stellar").style('font-family: "Gwendolyn", cursive; font-weight: 700; font-style: normal').classes('text-xl font-bold text-gray-800')
+            ui.label("Stellar").style('font-family: "Poppins", cursive; font-weight: 700; font-style: normal').classes('text-xl font-bold text-gray-800')
             ui.label("Sign In").classes('text-xl font-bold text-orange-900')
             ui.separator().classes('w-[10%] h-0.5 bg-orange-800 mb-4')
             

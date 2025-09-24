@@ -16,11 +16,12 @@ def show_add_event_page():
         flyer_content = e.content.read()
 
     ui.query(".nicegui-content").classes("m-0 p-0")
-    with ui.row().classes("w-full"):
-        with ui.column().classes("w-[20%]"):
+    ui.query(".nicegui-row").classes('flex-nowrap')
+    with ui.row().classes("w-full h-screen flex flex-row justify-between items-center"):
+        with ui.column().classes("w-[20%] h-full"):
             show_sidebar()
-        with ui.column().classes("w-[80%]"):
-            with ui.card().classes('w-full max-w-lg mx-auto my-10 bg-white shadow-xl rounded-2xl p-6'):
+        with ui.column().classes("w-[80%] h-full"):
+            with ui.card().classes('w-full bg-white shadow-xl rounded-2xl p-6'):
                 ui.label('Add Event').classes('text-3xl font-bold text-gray-800 text-center mb-6')
 
                 # Event Title
