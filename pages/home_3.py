@@ -18,7 +18,7 @@ def show_home_page_3():
                 <div style="font-size: 4rem; font-weight: 800; color: #333;">
                     When I think events, I<br>
                     always think<br>
-                    eGotickets
+                    Stellar 
                 </div>
                 <div style="margin-top: 1.5rem; font-size: 1.125rem; color: #000;">
                     <span style="font-weight: bold;">- Amma Aboagye</span> Founding curator of The Afropole

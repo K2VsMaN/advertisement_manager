@@ -12,8 +12,11 @@ def show_footer():
             'flex flex-col md:flex-row items-center justify-between gap-6'
         ):
             with ui.row().classes('items-center gap-2'):
-                ui.icon('public').classes('text-white text-2xl')
-                ui.label('Stellar').classes('text-white text-xl font-bold')
+                # ui.icon('public').classes('text-white text-2xl')
+                # ui.label('Stellar').classes('text-white text-xl font-bold')
+                ui.icon('local_activity').classes('text-3xl text-[#f64209]')
+                ui.label('Ste').classes('font-bold text-2xl text-white')
+                ui.label('llar').classes('text-[#f64209] text-2xl font-semibold -ml-2')
 
             with ui.row().classes('gap-6'):
                 ui.link('Home', '/').classes(link_base)

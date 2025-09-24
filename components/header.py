@@ -34,8 +34,8 @@ def show_header():
                         'flex items-center gap-2 nav-link text-white'
                     ).props('href="/"'):
                         ui.icon('local_activity').classes('text-3xl text-[#f64209]')
-                        ui.label('ego').classes('font-bold text-2xl text-white')
-                        ui.label('Tickets').classes('text-[#f64209] text-lg font-semibold -ml-2')
+                        ui.label('Ste').classes('font-bold text-2xl text-white')
+                        ui.label('llar').classes('text-[#f64209] text-2xl font-semibold -ml-2')
                     
 
                 # Navigation links and buttons
