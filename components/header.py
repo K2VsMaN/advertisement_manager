@@ -24,7 +24,7 @@ def show_header():
     ''')
 
     with ui.element('header').classes(
-        'fixed top-0 left-0 w-full z-50 bg-black/50 backdrop-blur-md shadow-md'
+        'fixed top-0 left-0 w-full z-50 bg-black/50 backdrop-blur-md shadow-md' # Add fixed where neccessary
     ):
         with ui.element('div').classes('mx-auto max-w-7xl w-full px-6'):
             with ui.row().classes('items-center justify-between py-3 gap-4'):

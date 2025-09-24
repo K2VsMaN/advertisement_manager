@@ -33,7 +33,7 @@ def show_home_page():
                   
 
                   # Grey lines between columns
-                  with ui.row().classes("w-full text-white justify-between flex-nowrap pt-10 mb-0 divide-x divide-gray-500/40"):
+                  with ui.row().classes  ("w-full text-white justify-between flex-nowrap pt-10 mb-0 divide-x divide-gray-500/40"):
                             col = "w-full sm:w-1/2 lg:w-1/4 px-6 md:px-8"
                             with ui.column().classes(col):
                                 ui.label("Event Power").classes("text-orange-500 font-bold text-3xl text-left")
