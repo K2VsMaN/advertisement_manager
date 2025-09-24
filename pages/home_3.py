@@ -2,31 +2,33 @@ from nicegui import ui
 
 @ui.page('/')
 def show_home_page_3():
-    with ui.row().classes('w-full max-w-7xl mx-auto items-center justify-between mt-10'):
+    
+
+   with ui.row().classes('w-full max-w-7xl mx-auto items-start justify-between gap-0 mt-10 m-0 p-0'):
+    
+    ui.query(".nicegui-content").classes("m-0 p-0")
 
     # Left side: text content
-        with ui.column().classes('flex-1 pr-8'):
-            ui.label('What creators are saying...') \
-        .classes('text-[#ff4c06] font-bold text-xl mb-2')
+    with ui.column().classes('flex-1 pr-6 m-0 p-0'):
+        ui.label('What creators are saying...') \
+            .classes('text-[#ff4c06] font-bold text-xl mb-2')
 
-            ui.html('''
-        <div style="line-height: 1;">
-            <div style="font-size: 4rem; font-weight: 800; color: #333;">
-                When I think events, I<br>
-                always think<br>
-                eGotickets
+        ui.html('''
+            <div style="line-height: 1;">
+                <div style="font-size: 4rem; font-weight: 800; color: #333;">
+                    When I think events, I<br>
+                    always think<br>
+                    eGotickets
+                </div>
+                <div style="margin-top: 1.5rem; font-size: 1.125rem; color: #000;">
+                    <span style="font-weight: bold;">- Amma Aboagye</span> Founding curator of The Afropole
+                </div>
             </div>
-            <div style="margin-top: 1.5rem; font-size: 1.125rem; color: #000;">
-                <span style="font-weight: bold;">- Amma Aboagye</span> Founding curator of The Afropole
-            </div>
-        </div>
-    ''') \
-    .props('inner-html')
-
+        ''').props('inner-html')
 
     # Right side: video
-        with ui.column().classes('items-center justify-center flex-none'):
-            ui.video('/assets/amma-aboagye.mp4') \
+    with ui.column().classes('flex-none items-center justify-center m-0 p-0'):
+        ui.video('/assets/amma-aboagye.mp4') \
             .classes('rounded-2xl shadow-xl w-[540px] h-[320px] object-cover')
 
     # Center the main content on the page
