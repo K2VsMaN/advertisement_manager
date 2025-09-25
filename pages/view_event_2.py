@@ -63,7 +63,7 @@ ui.add_head_html('''
 def show_view_event_page_2():
     city = 'Accra'
     with ui.element('section').classes('w-full py-10 bg-gray-50'):
-        with ui.element('div').classes('mx-auto max-w-7xl w-full mb-60'):
+        with ui.element('div').classes('mx-auto max-w-7xl w-full mt-20 1`mb-30'):
             ui.label(f'Similar Events in {city}').classes('text-2xl font-bold mb-8 text-center')
 
             with ui.element('div').classes('grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 mt-30'):

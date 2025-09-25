@@ -24,13 +24,13 @@ def show_view_event_page(id):
     # ui.label(f'Events in {current_location}').classes('text-2xl font-bold mb-6 text-center')
 
     # Two-column detail view for each event
-    with ui.element('section').classes('w-full py-6 mt-10') as section_container:
+    with ui.element('section').classes('w-full py-6 mt-20') as section_container:
         with ui.element('div').classes('mx-auto max-w-5xl w-full px-6 '):
             with ui.element('div').classes('grid grid-cols-1 md:grid-cols-2 gap-10 items-start'):
                 # Left: image
                 with ui.element('div').classes('w-full md:pr-6'):
                     img_el = ui.image(ev['flyer']) \
-                        .classes('w-full h-auto rounded-xl shadow-md object-cover') \
+                        .classes('w-full h-auto rounded-xl shadow-md object-fit') \
                         .props(f'alt="{ev["title"]}"')
 
                 # Right: details + actions

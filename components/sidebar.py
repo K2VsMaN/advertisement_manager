@@ -8,10 +8,10 @@ def show_sidebar():
     with ui.column().classes('bg-gray-100 p-4 w-[20%] shadow-lg h-full justify-between items-center fixed'):
         # Top section with branding and vendor info
         with ui.column().classes('w-full items-center mb-6'):
-            ui.link("Stellar", "/vendor/dashboard").classes('text-4xl font-extrabold text-orange-900 no-underline')
+            ui.link("Stellar", "/vendor/dashboard").classes('text-4xl font-extrabold no-underline').style("color:#f64209")
             ui.label("Vendor Dashboard").classes('text-lg font-bold text-gray-800')
         
-        ui.separator().classes('w-full bg-orange-800 h-0.5 mb-6')
+        ui.separator().classes('w-full h-0.5 mb-6').style("background:#f64209")
 
         # Navigation links section
         with ui.column().classes('w-full space-y-4 flex-grow'):
@@ -37,7 +37,7 @@ def show_sidebar():
             
         # Logout button at the bottom
         with ui.column().classes('w-full items-center mt-auto'):
-            ui.separator().classes('w-full bg-orange-800 h-0.5 my-6')
+            ui.separator().classes('w-full h-0.5 mb-6').style("background:#f64209")
             with ui.row().classes('w-full items-center cursor-pointer p-2 rounded-lg hover:bg-red-100 transition-colors'):
                 ui.icon('logout').classes('text-red-600')
                 ui.button('Logout', on_click=lambda: app.storage.user.clear(), color='red').classes('bg-transparent text-red-600 font-semibold shadow-none text-lg').props('flat no-caps')
