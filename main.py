@@ -47,10 +47,4 @@ def add_view_page(id=""):
 def dashboard():
     show_vendor_dashboard()
 
-@ui.page("/all_events")
-def all_events():
-    show_header()
-    show_all_events()
-    show_footer()
-
 ui.run()

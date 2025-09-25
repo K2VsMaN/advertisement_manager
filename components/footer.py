@@ -70,4 +70,3 @@ window.addEventListener('scroll', () => {
 </script>
 ''')
 
-ui.run()

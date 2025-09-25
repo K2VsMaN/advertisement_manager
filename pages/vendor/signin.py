@@ -1,4 +1,4 @@
-from nicegui import ui, run
+from nicegui import ui, run, app
 import requests
 from utils.api import base_url
 
@@ -12,6 +12,10 @@ async def _login(data):
     response = await run.cpu_bound(_run_login, data)
     print(response.status_code, response.content)
     _login_btn.props(remove="disable loading")
+    if response.status_code == 200:
+        json_data = response.json()
+        app.storage.user["access_token"] = json_data["access_token"]
+        return ui.navigate.back()
 
 
 @ui.page("/vendor/signin")
