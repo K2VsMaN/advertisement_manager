@@ -33,10 +33,10 @@ def show_header():
                     with ui.element('a').classes(
                         'flex items-center gap-2 nav-link text-white'
                     ).props('href="/"'):
-                        ui.icon('local_activity').classes('text-3xl text-[#f64209]')
-                        ui.label('Ste').classes('font-bold text-2xl text-white')
-                        ui.label('llar').classes('text-[#f64209] text-2xl font-semibold -ml-2')
-                    
+                            ui.icon('local_activity').classes('text-3xl text-[#f64209]')
+                            ui.label('Ste').classes('font-bold text-2xl text-white')
+                            ui.label('llar').classes('text-[#f64209] text-2xl font-semibold -ml-2')
+                            
 
                 # Navigation links and buttons
                 with ui.row().classes('items-center gap-6'):

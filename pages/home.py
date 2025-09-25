@@ -4,7 +4,7 @@ def show_home_page():
     ui.query(".nicegui-content").classes("m-0 p-0")
 
     with ui.row().classes("h-screen w-full relative"):
-         # Video background container 
+         # Video background container
       ui.html(
               f"""
               <video autoplay loop muted class="-z-10 absolute insert-0 w-full h-full object-cover">
@@ -26,7 +26,7 @@ def show_home_page():
                   ui.html("Africa's most trusted online advert partner since 2025. Discover and book events with ease, while<br>while empowering creators to sell and manage with ease.") \
                     .classes("text-white text-xl text-left leading-tight mt-2")
 
-                  ui.button("CREATE EVENT", on_click=lambda: ui.navigate.to("/vendor/add_event")) \
+                  ui.button("GET TICKETS", on_click=lambda: ui.navigate.to("/all_events")) \
     .classes("uppercase rounded-full px-5 py-3 text-white font-bold tracking-widest leading-tight mt-6") \
     .style("background:#f64209; color:white; letter-spacing:0.15em;") \
     .props("flat dense no-caps push ripple")

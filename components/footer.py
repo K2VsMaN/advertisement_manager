@@ -19,7 +19,9 @@ def show_footer():
                 ui.label('llar').classes('text-[#f64209] text-2xl font-semibold -ml-2')
 
             with ui.row().classes('gap-6'):
-                ui.link('Home', '/').classes(link_base)
+                # ui.link('Home', '/').classes(link_base)
+                ui.label('© 2025 Stellar')
+                
                 # ui.link('Add Event', '/add_event').classes(link_base)
                 # ui.link('Edit Event', '/edit_event').classes(link_base)
                 # ui.link('View Event', '/view_event').classes(link_base)
@@ -28,7 +30,7 @@ def show_footer():
                 ui.icon('public').classes('text-white cursor-pointer hover:text-blue-400')
                 ui.icon('share').classes('text-white cursor-pointer hover:text-blue-400')
                 ui.icon('mail').classes('text-white cursor-pointer hover:text-blue-400')
-                ui.html('<i class="fa-brands fa-facebook"></i>')
+                # ui.html('<i class="fa-brands fa-facebook"></i>')
                 
 
 # Make content stack above footer and add bottom padding for when footer is in front
