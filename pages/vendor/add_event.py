@@ -5,7 +5,7 @@ from utils.api import base_url
 
 def create_event(data,files):
     response = requests.post(f"{base_url}/adverts", data=data, files=files)
-    print(response.json())
+    print(response.status_code, response.content)
 
 @ui.page("/vendor/add_event")
 def show_add_event_page():
@@ -22,7 +22,7 @@ def show_add_event_page():
             show_sidebar()
         with ui.column().classes("w-[80%] h-full"):
             with ui.card().classes('w-full bg-white shadow-xl rounded-2xl p-6'):
-                ui.label('Add Event').classes('text-3xl font-bold text-gray-800 text-center mb-6')
+                ui.label('Add An Event').classes('text-3xl font-bold text-orange-900 text-center mb-6')
 
                 # Event Title
                 ui.label('Event Title').classes('text-lg font-semibold text-gray-700 mt-4')
@@ -32,9 +32,16 @@ def show_add_event_page():
                 ui.label('Event Description').classes('text-lg font-semibold text-gray-700 mt-4')
                 event_description = ui.textarea('', placeholder='Write a brief overview of your event...').props('outlined rounded-md autogrow').classes('w-full transition-all duration-300 hover:shadow-md')
 
-                # Event Date
-                ui.label('Event Date').classes('text-lg font-semibold text-gray-700 mt-4')
-                event_date = ui.input('', placeholder='Select a date').props('type=date outlined rounded-md dense').classes('w-full transition-all duration-300 hover:shadow-md')
+                # Event Date and Location on the same row
+                with ui.row().classes('w-full gap-4 mt-4'):
+                    # Event Date
+                    with ui.column().classes('flex-1'):
+                        ui.label('Event Date').classes('text-lg font-semibold text-gray-700')
+                        event_date = ui.input(value=['date'], placeholder='Select a date').props('type=date outlined rounded-md dense').classes('w-full')
+                    # Event Location
+                    with ui.column().classes('flex-1'):
+                        ui.label('Event Location').classes('text-lg font-semibold text-gray-700')
+                        event_location = ui.input(placeholder='e.g. 123 Main St, Anytown, USA').props('outlined rounded-md dense').classes('w-full')
 
                 # Start and End Times on the same row
                 with ui.row().classes('w-full gap-4 mt-4'):
@@ -62,7 +69,7 @@ def show_add_event_page():
 
                 # --- Image Upload Section ---
                 ui.label('Event Flyer').classes('text-lg font-semibold text-gray-700 mt-4')
-                ui.upload(on_upload=handle_flyer_upload).props('flat bordered').classes('w-full').style('border: 2px dashed #ccc; padding: 20px;')
+                ui.upload(on_upload=handle_flyer_upload).props('flat bordered color=orange-600').classes('w-full').style('border: 2px dashed #ccc; padding: 20px;')
 
                 with ui.row().classes('w-full justify-center mt-8'):
                     ui.button('Create Event', color='primary', on_click=lambda:create_event({
@@ -74,7 +81,7 @@ def show_add_event_page():
                         "start_time": start_time.value,
                         "end_time": end_time.value},
                         files={"flyer": flyer_content
-                    })).classes('text-lg font-semibold py-3 px-8 rounded-md shadow-lg transition-transform transform hover:scale-105 hover:shadow-2xl')
+                    })).classes('text-lg font-semibold py-3 px-8 rounded-md shadow-lg transition-transform transform hover:scale-105 hover:shadow-2xl').props('flat dense no-caps').classes('text-white px-10').style("background:#f64209")
                     # .on('click', partial(ui.navigate.to, f'/adverts'))
             
 
