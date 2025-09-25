@@ -46,4 +46,4 @@ def add_view_page(id=""):
 def dashboard():
     show_vendor_dashboard()
 
-ui.run()
+ui.run(storage_secret="lalalalalalalalalallaallalalalalalallalalallalallalalalalalalalallalalallalalalallala")

@@ -221,4 +221,3 @@ def view_page(event_id: str):
                     delete_btn.on('click', lambda e, d=del_dlg: d.open())
 
 
-ui.run()

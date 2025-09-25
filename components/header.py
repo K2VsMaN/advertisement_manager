@@ -1,4 +1,4 @@
-from nicegui import ui
+from nicegui import ui, app
 
 def show_header():
     ui.add_head_html('''
@@ -46,5 +46,7 @@ def show_header():
                         .classes("create-btn uppercase rounded-xl px-3 py-3 font-bold tracking-widest leading-tight") \
                         .style("background:#f64209; color:white; letter-spacing: 0.15em; align-items:center; height:38px;") \
                         .props("flat dense no-caps push ripple")
-
-                    ui.link('Sign In', '/vendor/signin').classes('nav-link text-white/90')
+                    if app.storage.user.get("access_token"):
+                        ui.button("Signout")
+                    else:
+                        ui.link('Sign In', '/vendor/signin').classes('nav-link text-white/90')
