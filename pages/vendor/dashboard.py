@@ -63,7 +63,7 @@ def show_vendor_dashboard():
             show_sidebar()
 
         # Main content (Right)
-        with ui.column().classes("w-full pl-[20%] p-10 overflow-y-auto bg-gray-50"): 
+        with ui.column().classes("w-full pl-[25%] p-10 overflow-y-auto bg-gray-50"): 
 
             # Time-based Greeting
             greeting_message = get_time_based_greeting(username)
@@ -135,7 +135,7 @@ def show_vendor_dashboard():
 
             with ui.element('section').classes('w-full py-10'):
                 with ui.element('div').classes('mx-auto max-w-7xl w-full'):
-                    ui.label('Events').classes('text-3xl font-semibold mb-8')
+                    ui.label('Events').classes('text-5xl font-semibold mb-8')
 
                     with ui.element('div').classes('grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 mt-30'):
                         for idx, ev in enumerate(events):
