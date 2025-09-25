@@ -55,7 +55,7 @@ def show_vendor_dashboard():
 
     # Mock data — replace with DB/API calls later
     total_tickets = 347
-    total_categories = 18
+    total_categories = 7
 
     with ui.row().classes("w-full h-full  flex-nowrap"):
         # Sidebar (Left)
@@ -85,7 +85,7 @@ def show_vendor_dashboard():
                             'flex flex-col justify-between p-6 rounded-xl bg-[#FFF1F0] w-full max-w-md '
                             'hover:shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer group'
                         )
-                    ).on('click', lambda: ui.navigate.to('/vendor/create-scratch')):
+                    ).on('click', lambda: ui.navigate.to('/vendor/add_event')):
 
                         ui.image('assets/SH.png') \
                             .classes('rounded-lg mb-6 object-cover w-full h-40')
@@ -128,12 +128,12 @@ def show_vendor_dashboard():
                             ui.label('Generate with AI').classes('text-[#3B82F6] font-medium')
 
                     #  KPI Stat below: Total Categories
-                    with ui.card().classes('bg-white p-5 rounded-xl shadow-sm border border-gray-100 w-full max-w-md text-center'):
+                    with ui.card().classes('bg-white p-5 rounded-xl shadow-sm border border-gray-100 w-full text-center'):
                         ui.icon('sell').classes('text-4xl text-[#f55c2b] mx-auto mb-3 ml-80')
                         ui.label(f'{total_categories}').classes('text-3xl font-bold text-gray-800')
                         ui.label('Ticket Categories').classes('text-gray-500 mt-1')
 
-            with ui.element('section').classes('w-full py-10 '):
+            with ui.element('section').classes('w-full py-10'):
                 with ui.element('div').classes('mx-auto max-w-7xl w-full'):
                     ui.label('Events').classes('text-3xl font-semibold mb-8')
 
@@ -164,4 +164,11 @@ def show_vendor_dashboard():
                                     with ui.element('div').classes('flex items-start gap-2 text-sm text-gray-600'):
                                         ui.icon('place').classes('text-gray-500 flex-shrink-0 mt-[2px]')
                                         ui.label(ev['location']).classes('flex-1 min-w-0 whitespace-normal break-words leading-snug')
-                                    ui.label(ev['price']).classes('text-sm text-gray-800 font-semibold')    
+                                    ui.label(ev['price']).classes('text-sm text-gray-800 font-semibold')   
+                with ui.element('div').classes('w-full flex justify-end mt-10'):
+                    ui.button('Load More')\
+  .props("flat dense no-caps push ripple")\
+  .classes("uppercase rounded-full px-10 py-4  text-white font-bold tracking-widest leading-tight mt-6 ml-auto text-center")\
+  .style("background:#f64209; color:white; letter-spacing:0.15em; max-width:180px;")
+
+
