@@ -15,7 +15,7 @@ from pages.vendor.signup import *
 from pages.vendor.signin import *
 from pages.user_signup import *
 from pages.vendor.dashboard_2 import *
-
+from pages.all_events import show_all_events
 
 
 # Expose the assets folder to the nicegui server
@@ -46,4 +46,10 @@ def add_view_page(id=""):
 def dashboard():
     show_vendor_dashboard()
 
-ui.run(storage_secret="lalalalalalalalalallaallalalalalalallalalallalallalalalalalalalallalalallalalalallala")
+@ui.page("/all_events")
+def all_events():
+    show_header()
+    show_all_events()
+    show_footer()
+
+ui.run()
