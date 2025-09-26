@@ -29,20 +29,20 @@ def show_header():
     ''')
 
     def on_search():
-        ui.notify(f'Searching for: {search_box.value}', type='positive')
+        # ui.notify(f'Searching for: {search_box.value}', type='positive')
 
-    with ui.element('header').classes(
+        with ui.element('header').classes(
         'fixed top-0 left-0 w-full z-50 bg-black/50 backdrop-blur-md shadow-md'
     ):
-        with ui.element('div').classes('mx-auto max-w-7xl w-full px-6'):
-            with ui.row().classes('items-center justify-between py-3 gap-4'):
+            with ui.element('div').classes('mx-auto max-w-7xl w-full px-6'):
+                with ui.row().classes('items-center justify-between py-3 gap-4'):
 
                 # ------------------ LEFT: Logo Section ------------------
-                with ui.row().classes('items-center gap-4'):
-                    with ui.element('a').classes(
+                    with ui.row().classes('items-center gap-4'):
+                        with ui.element('a').classes(
                         'flex items-center gap-2 nav-link text-white'
                     ).props('href="/"'):
-                        ui.icon('local_activity').classes('text-3xl text-[#f64209]')
+                            ui.icon('local_activity').classes('text-3xl text-[#f64209]')
                         ui.label('Ste').classes('font-bold text-2xl text-white')
                         ui.label('llar').classes('text-[#f64209] text-2xl font-semibold -ml-2')
 

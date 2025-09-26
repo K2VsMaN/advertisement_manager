@@ -1,5 +1,7 @@
 from nicegui import ui
 
+
+
 def show_home_page():
     ui.query(".nicegui-content").classes("m-0 p-0")
 
