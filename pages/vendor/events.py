@@ -40,7 +40,7 @@ def show_vendor_events():
         # Main content (Right)
         with ui.column().classes("w-full pl-[25%] p-10 overflow-y-auto bg-gray-50"):
             with ui.element("div").classes("w-full flex justify-end"):
-                ui.button("+ Create").props("flat dense no-caps push ripple").classes(
+                ui.button("+ Create", on_click=lambda: ui.navigate.to("/vendor/add_event")).props("flat dense no-caps push ripple").classes(
                     "uppercase rounded-full  px-6 py-4 font-bold tracking-widest leading-tight mt-6 ml-auto text-center"
                 ).style(
                     "color:#f64209 !important; letter-spacing:0.15em; max-width:180px; border:0.5px solid #f64209"
@@ -110,6 +110,9 @@ def show_vendor_events():
                                         ui.label(ev["location"]).classes(
                                             "flex-1 min-w-0 whitespace-normal break-words leading-snug"
                                         )
-                                    ui.label(ev["price"]).classes(
+                                    ui.label(f'GH¢{ev["price"]:.2f}').classes(
                                         "text-sm text-gray-800 font-semibold"
                                     )
+                                    with ui.row().classes("flex justify-between pt-2"):
+                                        ui.icon("edit").classes("text-gray-500 cursor-pointer hover:text-orange-600").on('click', lambda: ui.notify('Edit'))
+                                        ui.icon("delete").classes("text-gray-500 cursor-pointer hover:text-orange-600").on('click', lambda: ui.notify('Delete'))

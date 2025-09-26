@@ -46,7 +46,7 @@ def show_add_event_page():
         with ui.column().classes("w-[80%] h-full"):
             with ui.card().classes("w-full bg-white shadow-xl rounded-2xl p-6"):
                 ui.label("Add An Event").classes(
-                    "text-3xl font-bold text-orange-900 text-center mb-6"
+                    "text-3xl font-bold text-orange-600 text-center mb-6"
                 )
 
                 # Event Title
