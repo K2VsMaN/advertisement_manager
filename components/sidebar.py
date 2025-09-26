@@ -1,5 +1,9 @@
 from nicegui import ui,app
 
+def _sign_out():
+    app.storage.user.clear()
+    ui.navigate.to("/")
+
 def show_sidebar():
     """
     Creates a static sidebar for the vendor dashboard using a ui.column.
@@ -40,6 +44,6 @@ def show_sidebar():
             ui.separator().classes('w-full h-0.5 mb-6').style("background:#f64209")
             with ui.row().classes('w-full items-center cursor-pointer p-2 rounded-lg hover:bg-red-100 transition-colors'):
                 ui.icon('logout').classes('text-red-600')
-                ui.button('Logout', on_click=lambda: app.storage.user.clear(), color='red').classes('bg-transparent text-red-600 font-semibold shadow-none text-lg').props('flat no-caps')
+                ui.button(text='Logout', on_click=_sign_out, color='red').classes('bg-transparent text-red-600 font-semibold shadow-none text-lg').props('flat no-caps')
 
     

@@ -1,5 +1,6 @@
 from nicegui import ui, app
 
+
 def show_header():
     ui.add_head_html('''
     <style>
