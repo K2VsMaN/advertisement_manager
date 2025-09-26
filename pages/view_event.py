@@ -55,30 +55,30 @@ def show_view_event_page(id):
                             .classes('rounded-full px-6 py-3 font-bold') \
                             .props('color=orange text-color=white push ripple')
 
-                        edit_btn = ui.button('Edit',on_click=lambda: ui.navigate.to("/vendor/edit_event")) \
-                            .classes('rounded-full px-5 py-3 font-semibold') \
-                            .props('color=grey-7 text-color=white push')
+                        # edit_btn = ui.button('Edit',on_click=lambda: ui.navigate.to("/vendor/edit_event")) \
+                        #     .classes('rounded-full px-5 py-3 font-semibold') \
+                        #     .props('color=grey-7 text-color=white push')
 
-                        delete_btn = ui.button('Delete') \
-                            .classes('rounded-full px-5 py-3 font-semibold') \
-                            .props('color=red text-color=white push')
+                        # delete_btn = ui.button('Delete') \
+                        #     .classes('rounded-full px-5 py-3 font-semibold') \
+                        #     .props('color=red text-color=white push')
 
                     # -------- Delete confirm dialog --------
-                    with ui.dialog() as del_dlg, ui.card().classes('min-w-[320px] max-w-[90vw]'):
-                        ui.label('Delete this event?').classes('text-lg font-bold')
-                        ui.label(f'"{ev["title"]}" will be removed. This action cannot be undone.') \
-                            .classes('text-gray-600 mb-4')
+                    # with ui.dialog() as del_dlg, ui.card().classes('min-w-[320px] max-w-[90vw]'):
+                    #     ui.label('Delete this event?').classes('text-lg font-bold')
+                    #     ui.label(f'"{ev["title"]}" will be removed. This action cannot be undone.') \
+                    #         .classes('text-gray-600 mb-4')
 
-                        with ui.row().classes('justify-end gap-2'):
-                            ui.button('Cancel', on_click=del_dlg.close).props('flat')
+                    #     with ui.row().classes('justify-end gap-2'):
+                    #         ui.button('Cancel', on_click=del_dlg.close).props('flat')
 
-                            def confirm_delete():
-                                response = requests.delete(f"{base_url}/adverts/{id}")
-                                if response.status_code == 200:
-                                    ui.navigate.to("/")
+                    #         def confirm_delete():
+                    #             response = requests.delete(f"{base_url}/adverts/{id}")
+                    #             if response.status_code == 200:
+                    #                 ui.navigate.to("/")
 
-                            ui.button('Delete', on_click=lambda e: confirm_delete()) \
-                                .props('color=red text-color=white push')
+                    #         ui.button('Delete', on_click=lambda e: confirm_delete()) \
+                    #             .props('color=red text-color=white push')
 
-                    delete_btn.on('click', lambda e, d=del_dlg: d.open())
+                    # delete_btn.on('click', lambda e, d=del_dlg: d.open())
 

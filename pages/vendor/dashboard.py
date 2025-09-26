@@ -1,6 +1,8 @@
 from nicegui import ui
 from components.sidebar import show_sidebar
 from datetime import datetime
+import requests
+from utils.api import base_url
 
 events = [
     {
@@ -50,8 +52,13 @@ def get_time_based_greeting(name: str) -> str:
 
 @ui.page("/vendor/dashboard")
 def show_vendor_dashboard():
+    response = requests.get(f"{base_url}/users")
+    data = response.json()
+    for idx, user in enumerate(data.get("users", [])):
+        username = user.get('username', 'Unknown')
+        # username = (ev['username'])  # TODO: Replace with dynamic user/session in production
+    
     ui.query(".nicegui-content").classes("m-0 p-0")
-    username = "Nathan"  # TODO: Replace with dynamic user/session in production
 
     # Mock data — replace with DB/API calls later
     total_tickets = 347
