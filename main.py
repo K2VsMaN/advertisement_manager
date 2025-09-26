@@ -52,4 +52,4 @@ def all_events():
     show_all_events()
     show_footer()
 
-ui.run()
+ui.run(storage_secret="lalalalalalalalalallaallalalalalalallalalallalallalalalalalalalallalalallalalalallala")
