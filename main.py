@@ -15,8 +15,7 @@ from pages.vendor.signup import *
 from pages.vendor.signin import *
 from pages.user_signup import *
 from pages.vendor.dashboard_2 import *
-from pages.all_events import show_all_events     
-
+from pages.all_events import show_all_events
 
 
 # Expose the assets folder to the nicegui server
