@@ -33,7 +33,7 @@ def show_signin_page():
         with ui.card().classes(
             "w-[40%] bg-gray-100 justify-center items-center shadow-lg"
         ):
-            ui.label("Stellar").classes("text-xl font-bold text-orange-900")
+            ui.label("Stellar").classes("text-xl font-bold text-orange-600")
             ui.label("Sign In").classes("text-xl font-bold text-orange-500")
             ui.separator().classes("w-[10%] h-0.5 bg-orange-500 mb-4")
 
