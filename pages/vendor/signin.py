@@ -4,8 +4,10 @@ from utils.api import base_url
 
 _login_btn: ui.button = None
 
+
 def _run_login(data):
     return requests.post(f"{base_url}/users/login", data=data)
+
 
 async def _login(data):
     _login_btn.props(add="disable loading")
@@ -15,7 +17,10 @@ async def _login(data):
     if response.status_code == 200:
         json_data = response.json()
         app.storage.user["access_token"] = json_data["access_token"]
-        return ui.navigate.back()
+        if json_data["role"] == "vendor":
+            return ui.navigate.to("/vendor/dashboard")
+        else:
+            return ui.navigate.to("/")
 
 
 @ui.page("/vendor/signin")
@@ -53,13 +58,16 @@ def show_signin_page():
             with ui.row().classes("flex flex-row justify-between items-center w-[80%]"):
                 ui.checkbox(text="Remember me").classes("text-gray-600 text-sm w-1/2")
                 ui.link("Forgot Password").classes("w-1/2 text-orange-500 no-underline")
-            _login_btn = ui.button(
-                text="Login",
-                on_click=lambda: _login(
-                    {"email": email.value, "password": password.value}
-                ),
-            ).classes("w-[80%] text-white").props("flat dense no-caps").style(
-                "background:#f64209;"
+            _login_btn = (
+                ui.button(
+                    text="Login",
+                    on_click=lambda: _login(
+                        {"email": email.value, "password": password.value}
+                    ),
+                )
+                .classes("w-[80%] text-white")
+                .props("flat dense no-caps")
+                .style("background:#f64209;")
             )
             with ui.row().classes("text-gray-600 gap-0 space-x-2"):
                 ui.label("Don't have an account?")

@@ -23,6 +23,10 @@ async def _create_event(data, files):
     )
     print(response.status_code, response.content)
     _create_event_btn.props(remove="disable loading")
+    if response.status_code == 200:
+        return ui.navigate.to("/vendor/events")
+    elif response.status_code == 401:
+        return ui.navigate.to("/vendor/signin")
 
 
 @ui.page("/vendor/add_event")
@@ -40,8 +44,10 @@ def show_add_event_page():
         with ui.column().classes("w-[20%] h-full"):
             show_sidebar()
         with ui.column().classes("w-[80%] h-full"):
-            with ui.card().classes('w-full bg-white shadow-xl rounded-2xl p-6'):
-                ui.label('Add An Event').classes('text-3xl font-bold text-orange-900 text-center mb-6')
+            with ui.card().classes("w-full bg-white shadow-xl rounded-2xl p-6"):
+                ui.label("Add An Event").classes(
+                    "text-3xl font-bold text-orange-900 text-center mb-6"
+                )
 
                 # Event Title
                 ui.label("Event Title").classes(
@@ -156,7 +162,7 @@ def show_add_event_page():
                                     "advert_date": event_date.value,
                                     "start_time": start_time.value,
                                     "end_time": end_time.value,
-                                    "location": event_location.value
+                                    "location": event_location.value,
                                 },
                                 files={"flyer": flyer_content},
                             ),
