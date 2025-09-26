@@ -1,5 +1,9 @@
 from nicegui import ui, app
 
+def _sign_out():
+    app.storage.user.clear()
+    ui.navigate.to("/")
+
 
 def show_header():
     ui.add_head_html('''
@@ -76,6 +80,6 @@ def show_header():
                         .props("flat dense no-caps push ripple")
 
                     if app.storage.user.get("access_token"):
-                        ui.button("Signout")
+                        ui.button(text="Signout",on_click=_sign_out, color="red")
                     else:
                         ui.link('Sign In', '/vendor/signin').classes('nav-link text-white/90')
