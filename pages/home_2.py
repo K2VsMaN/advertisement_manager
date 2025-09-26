@@ -67,7 +67,7 @@ def show_home_page_2():
                             with ui.element('div').classes('flex items-start gap-2 text-sm text-gray-600'):
                                 ui.icon('place').classes('text-gray-500 flex-shrink-0 mt-[2px]')
                                 ui.label(ev['description']).classes('flex-1 min-w-0 whitespace-normal break-words leading-snug')
-                            ui.label(ev['price']).classes('text-sm text-gray-800 font-semibold')
+                            ui.label(f'GH¢{ev["price"]:.2f}').classes('text-sm text-gray-800 font-semibold')
 
 # -------- VIEW PAGE WITH GET TICKETS / EDIT / DELETE --------
 @ui.page('/event/{event_id}')

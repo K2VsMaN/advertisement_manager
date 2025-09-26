@@ -52,22 +52,19 @@ def get_time_based_greeting(name: str) -> str:
 
 @ui.page("/vendor/dashboard")
 def show_vendor_dashboard():
-    response = requests.get(f"{base_url}/users")
-    data = response.json()
-    for idx, user in enumerate(data.get("users", [])):
-        username = user.get('username', 'Unknown')
-        # username = (ev['username'])  # TODO: Replace with dynamic user/session in production
     
-    ui.query(".nicegui-content").classes("m-0 p-0")
+        username = ('Vera')  # TODO: Replace with dynamic user/session in production
+    
+        ui.query(".nicegui-content").classes("m-0 p-0")
 
     # Mock data — replace with DB/API calls later
-    total_tickets = 347
-    total_categories = 7
+        total_tickets = 347
+        total_categories = 7
 
-    with ui.row().classes("w-full h-full  flex-nowrap"):
+        with ui.row().classes("w-full h-full  flex-nowrap"):
         # Sidebar (Left)
-        with ui.column().classes("w-[20%] h-full fixed"):
-            show_sidebar()
+            with ui.column().classes("w-[20%] h-full fixed"):
+                show_sidebar()
 
         # Main content (Right)
         with ui.column().classes("w-full pl-[25%] p-10 overflow-y-auto bg-gray-50"): 
