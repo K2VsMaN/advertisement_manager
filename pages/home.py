@@ -23,7 +23,7 @@ def show_home_page():
                     .classes("text-white text-7xl font-bold text-left leading-tight") \
                     .style("line-height:1.05;")
 
-                  ui.html("Africa's most trusted online advert partner since 2025. Discover and book events with ease, while<br>while empowering creators to sell and manage with ease.") \
+                  ui.html("Africa's most trusted online advert partner since 2025. Discover and book events with ease, while<br> empowering creators to sell and manage with ease.") \
                     .classes("text-white text-xl text-left leading-tight mt-2")
 
                   ui.button("GET TICKETS", on_click=lambda: ui.navigate.to("/all_events")) \
