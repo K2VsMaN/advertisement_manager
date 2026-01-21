@@ -50,8 +50,8 @@ def show_header():
                 # ui.input(placeholder='Search...').classes('text-white').style('color:white;').props('flat dense').classes('w-full max-w-md rounded-md p-2 border border-gray-600 text-sm placeholder-white text-white')
                 # Input field
                 ui.input(placeholder='Search...') \
-                    .classes('text-white') \
-                    .style('color: white;')  # This ensures text is white during typing
+                    .classes('text-black') \
+                    .style('color: black;')  # This ensures text is white during typing
 
                 # Inject global style for placeholder + focus behavior
                 ui.add_head_html('''

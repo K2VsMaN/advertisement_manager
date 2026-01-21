@@ -27,10 +27,9 @@ ui.add_head_html('<link rel="stylesheet" href="/assets/reset.css"/>')
 
 @ui.page("/")
 def home_page():
-    show_header()
-    show_home_page()
+    search_input = show_home_page()
     show_home_page_3()
-    show_home_page_2()
+    show_home_page_2(search_input)
     show_footer()
     
 

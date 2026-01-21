@@ -29,8 +29,7 @@ ui.add_head_html('''
 ''')
 
 # -------- LISTING PAGE --------
-@ui.page('/')
-def show_home_page_2():
+def show_home_page_2(search_input=None):
     response = requests.get(f"{base_url}/adverts")
     data = response.json()
     # for advert in data["adverts"]:
@@ -40,34 +39,45 @@ def show_home_page_2():
         with ui.element('div').classes('mx-auto max-w-7xl w-full px-6 mb-10'):
             ui.label(f'Events in {city}').classes('text-2xl font-bold mb-8 text-center')
 
-            with ui.element('div').classes('grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10'):
-                for idx, ev in enumerate(data["adverts"]):
-                    # Original styling + view-stroke + clickable
-                    with ui.element('div').classes(
-                        'group bg-white rounded-xl shadow-md overflow-hidden '
-                        'transition-all duration-300 hover:shadow-lg h-full flex flex-col relative '
-                        'view-stroke cursor-pointer'
-                    ).props('tabindex=0 role=link aria-label="View details"') as card:
-                        card.on('click', partial(ui.navigate.to, f'/view_event?id={ev["id"]}'))
+            grid_container = ui.element('div').classes('grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10')
 
-                        # Image + optional tag
-                        with ui.element('div').classes('relative h-40 w-full overflow-hidden'):
-                            ui.image(ev['flyer']).classes(
-                                'h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105'
-                            )
-                            if ev.get('category'):
-                                ui.label(ev['category']).classes(
-                                    'absolute top-2 left-2 text-xs bg-red-100 text-red-600 font-semibold px-2 py-1 rounded-full'
+            def render_events(query=""):
+                grid_container.clear()
+                with grid_container:
+                    for idx, ev in enumerate(data["adverts"]):
+                        if query and query.lower() not in ev['title'].lower():
+                            continue
+                        # Original styling + view-stroke + clickable
+                        with ui.element('div').classes(
+                            'group bg-white rounded-xl shadow-md overflow-hidden '
+                            'transition-all duration-300 hover:shadow-lg h-full flex flex-col relative '
+                            'view-stroke cursor-pointer'
+                        ).props('tabindex=0 role=link aria-label="View details"') as card:
+                            card.on('click', partial(ui.navigate.to, f'/view_event?id={ev["id"]}'))
+
+                            # Image + optional tag
+                            with ui.element('div').classes('relative h-40 w-full overflow-hidden'):
+                                ui.image(ev['flyer']).classes(
+                                    'h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105'
                                 )
+                                if ev.get('category'):
+                                    ui.label(ev['category']).classes(
+                                        'absolute top-2 left-2 text-xs bg-red-100 text-red-600 font-semibold px-2 py-1 rounded-full'
+                                    )
 
-                        # Content (unchanged)
-                        with ui.element('div').classes('p-4 flex flex-col gap-1 grow'):
-                            ui.label(ev['title']).classes('font-semibold text-md leading-snug')
-                            ui.label(ev['advert_date']).classes('text-sm text-gray-600')
-                            with ui.element('div').classes('flex items-start gap-2 text-sm text-gray-600'):
-                                ui.icon('place').classes('text-gray-500 flex-shrink-0 mt-[2px]')
-                                ui.label(ev['description']).classes('flex-1 min-w-0 whitespace-normal break-words leading-snug')
-                            ui.label(f'GH¢{ev["price"]:.2f}').classes('text-sm text-gray-800 font-semibold')
+                            # Content (unchanged)
+                            with ui.element('div').classes('p-4 flex flex-col gap-1 grow'):
+                                ui.label(ev['title']).classes('font-semibold text-md leading-snug')
+                                ui.label(ev['advert_date']).classes('text-sm text-gray-600')
+                                with ui.element('div').classes('flex items-start gap-2 text-sm text-gray-600'):
+                                    ui.icon('place').classes('text-gray-500 flex-shrink-0 mt-[2px]')
+                                    ui.label(ev['description']).classes('flex-1 min-w-0 whitespace-normal break-words leading-snug')
+                                ui.label(f'GH¢{ev["price"]:.2f}').classes('text-sm text-gray-800 font-semibold')
+
+            render_events()
+            
+            if search_input:
+                search_input.on('input', lambda e: render_events(e.value))
 
 # -------- VIEW PAGE WITH GET TICKETS / EDIT / DELETE --------
 @ui.page('/event/{event_id}')
@@ -146,5 +156,3 @@ def view_page(event_id: str):
                                 .props('color=red text-color=white push')
 
                     delete_btn.on('click', lambda e, d=del_dlg: d.open())
-
-
