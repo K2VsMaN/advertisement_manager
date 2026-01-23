@@ -1,6 +1,5 @@
 from nicegui import ui
 
-@ui.page('/')
 def show_home_page_3():
     
 

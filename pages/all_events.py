@@ -93,7 +93,6 @@ ui.add_head_html('''
 ''')
 
 # -------- LISTING PAGE --------
-@ui.page("/all_events")
 def show_all_events():
     city = 'Accra'
     with ui.element('div').classes('w-full flex justify-end'):

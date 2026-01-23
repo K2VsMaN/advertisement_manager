@@ -59,7 +59,6 @@ ui.add_head_html('''
 ''')
 
 # -------- LISTING PAGE --------
-@ui.page('/')
 def show_view_event_page_2():
     city = 'Accra'
     with ui.element('section').classes('w-full py-10 bg-gray-50'):
@@ -219,5 +218,3 @@ def view_page(event_id: str):
                                 .props('color=red text-color=white push')
 
                     delete_btn.on('click', lambda e, d=del_dlg: d.open())
-
-
