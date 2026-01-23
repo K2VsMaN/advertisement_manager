@@ -1,8 +1,8 @@
 from nicegui import ui, app
 
-# def _sign_out():
-#     app.storage.user.clear()
-#     ui.navigate.to("/")
+def _sign_out():
+    app.storage.user.clear()
+    ui.navigate.to("/")
 
 
 # def show_header():
@@ -94,6 +94,9 @@ def show_header():
             with ui.row().classes("items-center gap-4"):
                 ui.button("Home", on_click=lambda: ui.navigate.to("/")).props("flat dense no-caps text-color=white")
                 ui.button("Events", on_click=lambda: ui.navigate.to("/all_events")).props("flat dense no-caps text-color=white")
-                ui.button("Login", on_click=lambda: ui.navigate.to("/vendor/signin")).props("flat dense no-caps text-color=white")
-                ui.button("Sign Up", on_click=lambda: ui.navigate.to("/signup")).props("flat dense no-caps").classes("bg-[#f64209] text-white rounded-full px-6")
+                if app.storage.user.get("access_token"):
+                    ui.button("Sign Out", on_click=_sign_out).props("flat dense no-caps text-color=white")
+                else:
+                    ui.button("Login", on_click=lambda: ui.navigate.to("/vendor/signin")).props("flat dense no-caps text-color=white")
+                    ui.button("Sign Up", on_click=lambda: ui.navigate.to("/signup")).props("flat dense no-caps").classes("bg-[#f64209] text-white rounded-full px-6")
         return search_input
