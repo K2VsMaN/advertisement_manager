@@ -1,10 +1,10 @@
 from nicegui import ui
-from components.header import show_header
+# from components.header import show_header
 
 
 
 def show_home_page():
-    search_input = show_header()
+    # search_input = show_header()
     ui.query(".nicegui-content").classes("m-0 p-0 gap-0")
 
     with ui.row().classes("h-screen w-full relative"):
@@ -51,5 +51,5 @@ def show_home_page():
                             with ui.column().classes(col):
                                 ui.label("Time-Tested").classes("text-orange-500 font-bold text-3xl text-left")
                                 ui.html("Over a decade of building tools<br>that make events better.").classes("text-gray-300 leading-tight text-left")
-    return search_input
+    # return search_input
                             
