@@ -63,8 +63,11 @@ def show_vendor_events():
                         )
                         # print(response.status_code, response.content)
                         if response.status_code == 200:
-                            json_data = response.json()
-                            events = json_data["data"]
+                            try:
+                                json_data = response.json()
+                                events = json_data.get("data", [])
+                            except ValueError:
+                                events = []
                         for idx, ev in enumerate(events):
                             # Original styling + view-stroke + clickable
                             with ui.element("div").classes(
