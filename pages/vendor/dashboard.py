@@ -50,7 +50,7 @@ def get_time_based_greeting(name: str) -> str:
     return f"{part}, {name}"
 
 
-@ui.page("/vendor/dashboard")
+# @ui.page("/vendor/dashboard")
 def show_vendor_dashboard():
     
         username = ('Vera')  # TODO: Replace with dynamic user/session in production
