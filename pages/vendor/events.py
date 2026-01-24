@@ -4,28 +4,28 @@ import requests
 from utils.api import base_url
 
 # Hover stroke effect (keeps original classes)
-ui.add_head_html(
-    """
-<style>
-.view-stroke { position: relative; }
-.view-stroke::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;          /* respects rounded-xl */
-  border: 2px solid rgba(249,115,22,0); /* orange-500 transparent */
-  transform: scale(0.985);
-  transition: border-color .25s ease, transform .25s ease;
-  pointer-events: none;
-}
-.view-stroke:hover::before,
-.view-stroke:focus-within::before {
-  border-color: rgba(249,115,22,.9); /* orange ring on hover */
-  transform: scale(1);
-}
-</style>
-"""
-)
+# ui.add_head_html(
+#     """
+# <style>
+# .view-stroke { position: relative; }
+# .view-stroke::before {
+#   content: '';
+#   position: absolute;
+#   inset: 0;
+#   border-radius: inherit;          /* respects rounded-xl */
+#   border: 2px solid rgba(249,115,22,0); /* orange-500 transparent */
+#   transform: scale(0.985);
+#   transition: border-color .25s ease, transform .25s ease;
+#   pointer-events: none;
+# }
+# .view-stroke:hover::before,
+# .view-stroke:focus-within::before {
+#   border-color: rgba(249,115,22,.9); /* orange ring on hover */
+#   transform: scale(1);
+# }
+# </style>
+# """
+# )
 
 
 # -------- LISTING PAGE --------
