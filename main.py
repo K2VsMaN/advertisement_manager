@@ -27,6 +27,7 @@ ui.add_head_html('<link rel="stylesheet" href="/assets/reset.css"/>')
 
 @ui.page("/")
 def home_page():
+    show_header()
     search_input = show_home_page()
     show_home_page_3()
     show_home_page_2(search_input)
@@ -51,4 +52,4 @@ def all_events():
     show_all_events()
     show_footer()
 
-ui.run(storage_secret="lalalalalalalalalallaallalalalalalallalalallalallalalalalalalalallalalallalalalallala")
+ui.run(storage_secret="lalalala")
