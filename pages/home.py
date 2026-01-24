@@ -15,7 +15,7 @@ def show_home_page():
                 <source src="/assets/HV.mp4" type="video/mp4">
             </video>
         """
-         )
+         ).classes("sanitize = True")
     # with ui.element("section") \
     #     .classes("relative w-full h-screen m-0 p-0 overflow-hidden") \
     #     .style('background-image: url("/assets/H3.jpg"); background-size: cover; background-position: center;'):
