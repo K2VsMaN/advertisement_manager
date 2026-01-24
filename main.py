@@ -1,6 +1,6 @@
 from nicegui import ui, app
 
-# from components.header import show_header
+from components.header import show_header
 from pages.home import show_home_page
 from pages.view_event import show_view_event_page
 from pages.view_event_2 import show_view_event_page_2
@@ -35,7 +35,7 @@ def home_page():
 
 @ui.page("/view_event")
 def add_view_page(id=""):
-    # show_header()
+    show_header()
     show_view_event_page(id)
     show_view_event_page_2()
     show_footer()
@@ -47,7 +47,7 @@ def dashboard():
 
 @ui.page("/all_events")
 def all_events():
-    # show_header()
+    show_header()
     show_all_events()
     show_footer()
 

@@ -1,8 +1,8 @@
 from nicegui import ui
 
 def show_footer():
-    ui.add_head_html('<script src="https://kit.fontawesome.com/a4861baa7d.js" crossorigin="anonymous"></script>')
-    link_base = 'text-white text-sm font-semibold hover:text-blue-400 transition-colors duration-300 no-underline'
+    # ui.add_head_html('<script src="https://kit.fontawesome.com/a4861baa7d.js" crossorigin="anonymous"></script>')
+    # link_base = 'text-white text-sm font-semibold hover:text-blue-400 transition-colors duration-300 no-underline'
 
     # Overlay footer (controlled with z-index via classes 'front' and 'behind')
     with ui.element('footer').props('id=page-footer') \
