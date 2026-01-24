@@ -1,8 +1,8 @@
 from nicegui import ui
 
 def show_footer():
-    # ui.add_head_html('<script src="https://kit.fontawesome.com/a4861baa7d.js" crossorigin="anonymous"></script>')
-    # link_base = 'text-white text-sm font-semibold hover:text-blue-400 transition-colors duration-300 no-underline'
+    ui.add_head_html('<script src="https://kit.fontawesome.com/a4861baa7d.js" crossorigin="anonymous"></script>')
+    link_base = 'text-white text-sm font-semibold hover:text-blue-400 transition-colors duration-300 no-underline'
 
     # Overlay footer (controlled with z-index via classes 'front' and 'behind')
     with ui.element('footer').props('id=page-footer') \
@@ -51,22 +51,22 @@ ui.add_head_html('''
 ''')
 
 # JS: send footer behind content when scrolling down; bring to front when scrolling up
-# ui.add_head_html('''
-# <script>
-# let lastScroll = 0;
-# window.addEventListener('scroll', () => {
-#   const footer = document.getElementById('page-footer');
-#   const current = window.pageYOffset || document.documentElement.scrollTop;
-#   const goingDown = current > lastScroll;
-#   if (goingDown) {
-#     footer.classList.add('behind');
-#     footer.classList.remove('front');
-#   } else {
-#     footer.classList.add('front');
-#     footer.classList.remove('behind');
-#   }
-#   lastScroll = current <= 0 ? 0 : current;
-# });
-# </script>
-# ''')
+ui.add_head_html('''
+<script>
+let lastScroll = 0;
+window.addEventListener('scroll', () => {
+  const footer = document.getElementById('page-footer');
+  const current = window.pageYOffset || document.documentElement.scrollTop;
+  const goingDown = current > lastScroll;
+  if (goingDown) {
+    footer.classList.add('behind');
+    footer.classList.remove('front');
+  } else {
+    footer.classList.add('front');
+    footer.classList.remove('behind');
+  }
+  lastScroll = current <= 0 ? 0 : current;
+});
+</script>
+''')
 

@@ -21,7 +21,7 @@ from pages.all_events import show_all_events
 # Expose the assets folder to the nicegui server
 app.add_static_files("/assets", "assets")
 
-ui.add_head_html('<link rel="stylesheet" href="/assets/reset.css"/>')
+# ui.add_head_html('<link rel="stylesheet" href="/assets/reset.css"/>')
 
 #ui.page - This decorator marks a function to be a page builder.
 
