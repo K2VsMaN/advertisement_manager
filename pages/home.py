@@ -11,7 +11,7 @@ def show_home_page():
          # Video background container
       ui.html(
               f"""
-              <video autoplay loop muted class="-z-10 absolute insert-0 w-full h-full object-cover">
+              <video autoplay loop muted class="-z-10 absolute inset-0 w-full h-full object-cover">
                 <source src="/assets/HV.mp4" type="video/mp4">
             </video>
         """
