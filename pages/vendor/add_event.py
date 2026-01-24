@@ -177,12 +177,12 @@ def show_add_event_page():
                     # .on('click', partial(ui.navigate.to, f'/adverts'))
 
 
-ui.add_head_html(
-    """
-    <style>
-        body {
-            background-color: #f0f2f5;
-        }
-    </style>
-"""
-)
+# ui.add_head_html(
+#     """
+#     <style>
+#         body {
+#             background-color: #f0f2f5;
+#         }
+#     </style>
+# """
+# )
