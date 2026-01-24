@@ -39,34 +39,34 @@ with ui.column().props('id=main-content').classes('relative z-10 flex-grow p-6 p
     ui.label('Main content goes here')
     # ... more content
 
-# Footer
-show_footer()
+# # Footer
+# show_footer()
 
-# Styles to control stacking without shifting layout
-ui.add_head_html('''
-<style>
-#page-footer.front  { z-index: 60; pointer-events: auto; opacity: 1; }
-#page-footer.behind { z-index: 0;  pointer-events: none; opacity: .85; }
-</style>
-''')
+# # Styles to control stacking without shifting layout
+# ui.add_head_html('''
+# <style>
+# #page-footer.front  { z-index: 60; pointer-events: auto; opacity: 1; }
+# #page-footer.behind { z-index: 0;  pointer-events: none; opacity: .85; }
+# </style>
+# ''')
 
-# JS: send footer behind content when scrolling down; bring to front when scrolling up
-ui.add_head_html('''
-<script>
-let lastScroll = 0;
-window.addEventListener('scroll', () => {
-  const footer = document.getElementById('page-footer');
-  const current = window.pageYOffset || document.documentElement.scrollTop;
-  const goingDown = current > lastScroll;
-  if (goingDown) {
-    footer.classList.add('behind');
-    footer.classList.remove('front');
-  } else {
-    footer.classList.add('front');
-    footer.classList.remove('behind');
-  }
-  lastScroll = current <= 0 ? 0 : current;
-});
-</script>
-''')
+# # JS: send footer behind content when scrolling down; bring to front when scrolling up
+# ui.add_head_html('''
+# <script>
+# let lastScroll = 0;
+# window.addEventListener('scroll', () => {
+#   const footer = document.getElementById('page-footer');
+#   const current = window.pageYOffset || document.documentElement.scrollTop;
+#   const goingDown = current > lastScroll;
+#   if (goingDown) {
+#     footer.classList.add('behind');
+#     footer.classList.remove('front');
+#   } else {
+#     footer.classList.add('front');
+#     footer.classList.remove('behind');
+#   }
+#   lastScroll = current <= 0 ? 0 : current;
+# });
+# </script>
+# ''')
 
