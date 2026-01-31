@@ -58,7 +58,7 @@ def show_vendor_events():
                         response = requests.get(
                             f"{base_url}/adverts/vendor/me",
                             headers={
-                                "Authorization": f"Bearer {app.storage.user.get("access_token")}"
+                                "Authorization": f"Bearer {app.storage.user.get('access_token')}"
                             },
                         )
                         # print(response.status_code, response.content)
