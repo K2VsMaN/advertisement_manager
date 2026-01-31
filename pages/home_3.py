@@ -23,7 +23,7 @@ def show_home_page_3():
                     <span style="font-weight: bold;">- Amma Aboagye</span> Founding curator of The Afropole
                 </div>
             </div>
-        ''').props('inner-html')
+        ''', sanitize=False).props('inner-html')
 
     # Right side: video
     with ui.column().classes('flex-none items-center justify-center m-0 p-0'):
@@ -35,12 +35,12 @@ def show_home_page_3():
         with ui.row().classes('bg-[#ff4c06] rounded-[48px] max-w-[1500px] w-full px-12 py-14 items-center justify-start gap-x-0'):
             # Left side: text and download options
             with ui.column().classes('gap-y-0 flex-1'):
-                ui.html('Trusted by the brands<br>and creators you love.').classes(
+                ui.html('Trusted by the brands<br>and creators you love.', sanitize=False).classes(
                     'font-bold text-white text-[3.2rem] md:text-[4rem] leading-none mb-6'
                 )
                 ui.html(
                     'From <b>mega-festivals</b> to <b>intimate gatherings</b>, we power every event with passion<br>and expertise. '
-                    'Discover and book your next experience anytime, anywhere—online,<br>offline, USSD, WhatsApp, or the Cityloop app!'
+                    'Discover and book your next experience anytime, anywhere—online,<br>offline, USSD, WhatsApp, or the Cityloop app!', sanitize=False
                 ).classes('text-white text-lg mb-10').props('rich')
 
                 # with ui.row().classes('gap-6 mt-2 justify-center'):
