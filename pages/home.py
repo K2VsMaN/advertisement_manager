@@ -28,7 +28,7 @@ def show_home_page():
                     .style("line-height:1.05;")
 
                   ui.html("Africa's most trusted online advert partner since 2025. Discover and book events with ease, while<br> empowering creators to sell and manage with ease.") \
-                    .classes("text-white text-xl text-left leading-tight mt-2")
+                    .classes("text-white text-xl text-left leading-tight mt-2 sanitize = True")
 
                   ui.button("GET TICKETS", on_click=lambda: ui.navigate.to("/all_events")) \
     .classes("uppercase rounded-full px-5 py-3 text-white font-bold tracking-widest leading-tight mt-6") \
@@ -41,15 +41,15 @@ def show_home_page():
                             col = "w-full sm:w-1/2 lg:w-1/4 px-6 md:px-8"
                             with ui.column().classes(col):
                                 ui.label("Event Power").classes("text-orange-500 font-bold text-3xl text-left")
-                                ui.html("Creators across Africa trust us<br>to bring events to life.").classes("text-gray-300 leading-tight text-left")
+                                ui.html("Creators across Africa trust us<br>to bring events to life.").classes("text-gray-300 leading-tight text-left sanitize = True")
                             with ui.column().classes(col):
                                 ui.label("Creator First").classes("text-orange-500 font-bold text-3xl text-left")
-                                ui.html("We’re the partner behind<br>thousands of successful events.").classes("text-gray-300 leading-tight text-left")
+                                ui.html("We’re the partner behind<br>thousands of successful events.").classes("text-gray-300 leading-tight text-left sanitize = True")
                             with ui.column().classes(col):
                                 ui.label("Easy Payouts").classes("text-orange-500 font-bold text-3xl text-left")
-                                ui.html("Fast, secure, stress-free earnings<br>— every time.").classes("text-gray-300 leading-tight text-left")
+                                ui.html("Fast, secure, stress-free earnings<br>— every time.").classes("text-gray-300 leading-tight text-left sanitize = True")
                             with ui.column().classes(col):
                                 ui.label("Time-Tested").classes("text-orange-500 font-bold text-3xl text-left")
-                                ui.html("Over a decade of building tools<br>that make events better.").classes("text-gray-300 leading-tight text-left")
+                                ui.html("Over a decade of building tools<br>that make events better.").classes("text-gray-300 leading-tight text-left sanitize = True")
     # return search_input
                             
